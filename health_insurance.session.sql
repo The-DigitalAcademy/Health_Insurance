@@ -69,7 +69,6 @@ CREATE TABLE "Campaigns" (
   "platform_id" int,
   FOREIGN KEY ("campaign_category_id") REFERENCES "Campaign_category" ("campaign_category_id"),
   FOREIGN KEY ("platform_id") REFERENCES "Platform" ("platform_id"),
-
 );
 
 CREATE TABLE "Customers" (
