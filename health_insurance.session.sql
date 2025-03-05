@@ -67,6 +67,11 @@ CREATE TABLE "Campaigns" (
   "days_run" int,
   "campaign_category_id" int,
   "platform_id" int,
+  "num_signups" int,
+  "signup_rate" float,
+  "cost_per_signup" float,
+  "click_through_rate" float,
+  "cost_per_click" float,
   FOREIGN KEY ("campaign_category_id") REFERENCES "Campaign_category" ("campaign_category_id"),
   FOREIGN KEY ("platform_id") REFERENCES "Platform" ("platform_id"),
 );
