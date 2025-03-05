@@ -37,7 +37,7 @@ CREATE TABLE "Plan" (
   "plan" varchar
 );
 
-CREATE Table Campaign_detail (
+CREATE Table "Campaign_detail" (
   "campaign_detail_id" serial PRIMARY KEY,
   "campaign_detail" varchar
 );
@@ -53,9 +53,9 @@ CREATE TABLE "Campaign_type" (
 );
 
 CREATE TABLE "Campaign_map" (
-  "campaign_caregory_id" int,
+  "campaign_category_id" int,
   "campaign_type_id" int,
-  FOREIGN KEY ("campaign_caregory_id") REFERENCES "Campaign_category" ("campaign_category_id"),
+  FOREIGN KEY ("campaign_category_id") REFERENCES "Campaign_category" ("campaign_category_id"),
   FOREIGN KEY ("campaign_type_id") REFERENCES "Campaign_type" ("campaign_type_id")
 );
 
