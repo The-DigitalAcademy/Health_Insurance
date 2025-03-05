@@ -37,6 +37,11 @@ CREATE TABLE "Plan" (
   "plan" varchar
 );
 
+CREATE Table Campaign_detail (
+  "campaign_detail_id" serial PRIMARY KEY,
+  "campaign_detail" varchar
+);
+
 CREATE TABLE "Campaign_category" (
   "campaign_category_id" serial PRIMARY KEY,
   "campaign_category" varchar
@@ -66,6 +71,7 @@ CREATE TABLE "Campaigns" (
   "clicks" int,
   "days_run" int,
   "campaign_category_id" int,
+  "campaign_detail_id" int,
   "platform_id" int,
   "num_signups" int,
   "signup_rate" float,
@@ -73,7 +79,8 @@ CREATE TABLE "Campaigns" (
   "click_through_rate" float,
   "cost_per_click" float,
   FOREIGN KEY ("campaign_category_id") REFERENCES "Campaign_category" ("campaign_category_id"),
-  FOREIGN KEY ("platform_id") REFERENCES "Platform" ("platform_id"),
+  FOREIGN KEY ("campaign_detail_id") REFERENCES "Campaign_detail" ("campaign_detail_id"),
+  FOREIGN KEY ("platform_id") REFERENCES "Platform" ("platform_id")
 );
 
 CREATE TABLE "Customers" (
